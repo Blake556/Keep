@@ -5,11 +5,12 @@ import CreateNote from './CreateNote'
 
 import Notes from './Notes'
 
-function Main() {
+function Main(props) {
   return (
     <div className="Main col-9">
      
-     <CreateNote />
+     <CreateNote handleAddedNotes={props.handleAddedNotes}/>
+      {/* notes{props.notes} */}
      <Notes />
 
     </div>
