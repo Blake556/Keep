@@ -1,0 +1,26 @@
+.Favorite-Notes {
+    border: 1px solid rgb(162, 162, 162);
+    border-radius: 10px;
+    width: fit-content; 
+    min-width: 150px; 
+    height: 45px;
+    color: white;
+    margin: 25px;
+   
+  }
+  
+  .favorite-notes-star {
+    color: gold;
+  }
+  
+  .favorite-notes-child {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .favorite-notes-child h5 {
+    margin: 0; /* Remove default margin */
+  }
+  

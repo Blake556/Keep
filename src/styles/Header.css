@@ -1,0 +1,80 @@
+.Header {
+    background-color:rgb(37, 37, 37);
+    height: 65px;
+    color: white;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    /* border-bottom: .1px solid rgb(162, 162, 162); */
+}
+
+.header-box {
+    height: 70%;
+}
+
+.title-box  {
+    margin-left: 30px;
+}
+.title-text  {
+    margin: 2px 0 0 15px;
+}
+
+
+
+
+.search-btn {
+   position: relative;
+   bottom: 1.5px;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+    /* height: 100%;
+    width: 50px; */
+    padding: 2.5px 10px;
+    background-color:rgb(46, 46, 46);
+
+}
+
+.search-icon {
+    position: relative;
+   top: 1.5px;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 100%;
+  
+    padding: 8px;
+}
+
+.search-icon:hover {
+    background-color: rgb(66, 66, 66);
+}
+
+.btn:focus {
+    outline: none;
+  box-shadow: none; 
+  }
+
+.search-note {
+   
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 10px;
+    width: 80%;
+    height: 100%;
+}
+
+
+.filler-icons {
+    margin: 0 18px;
+    font-size: 1.3rem;
+    color: gray;
+}
+
+.fake-acount {
+    background-color: rgb(226, 51, 139);
+    color: white;
+    border-radius: 100%;
+    padding: 3px 10px;
+    margin: 0 15px;
+    font-weight: 700;
+    font-size: 18px;
+}

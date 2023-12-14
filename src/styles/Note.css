@@ -1,0 +1,16 @@
+.Note {
+    border: 1px solid rgb(162, 162, 162);
+    border-radius: 10px;
+    width: 225px;
+    padding: 15px;
+    margin: 10px;
+}
+
+
+.note-title {
+    color: white;
+}
+
+.note-body {
+    color: white;
+}

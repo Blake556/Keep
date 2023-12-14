@@ -1,0 +1,85 @@
+/* CreateNote.css */
+.CreateNote {
+    border: 1px solid rgb(162, 162, 162);
+    border-radius: 10px;
+    /* background-color: white; */
+    min-height: 175px;
+    width: 60%;
+    margin: 30px auto;
+  }
+  
+  input {
+    
+    background-color:rgb(46, 46, 46);
+    color: white;
+    border: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    outline: none;
+    font-weight: 700;
+  }
+  .note-create-title {
+   
+    min-height: 50px;
+  }
+  
+  textarea {
+    background-color:rgb(46, 46, 46);
+    color: white;
+    border: none;
+    outline: none;
+    resize: none;
+    overflow-y: hidden;
+    padding: 20px;
+  }
+  
+  .note-create-body {
+    min-height: 50px;
+  }
+
+
+.options-panel {
+    background-color:rgb(37, 37, 37);
+    height: 50px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.add-btn  {
+    color: gray;
+    background-color:rgb(46, 46, 46);
+    /* width: 60px; */
+    padding: 2px 30px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    
+  }
+
+.favorite-btn  {
+    color: gray;
+    background-color:rgb(37, 37, 37);
+    /* width: 60px; */
+    padding: 2px 10px;
+    border: 1px solid rgb(37, 37, 37);
+    border-radius: 5px;
+    
+  }
+
+  .color-btn {
+    border: none;
+    outline: none;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    margin: 0 7px;
+    background-color: white;
+    opacity: 60%;
+  }
+
+  
+
+
+
+
+
+  
