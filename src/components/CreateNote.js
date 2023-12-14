@@ -93,27 +93,16 @@ function CreateNote() {
 
         <div className='col-8'>
           <div className='d-flex justify-content-end color-container'>
-            <button className='color-btn white' style={{ backgroundColor: 'white' }} 
-              onClick={ () => handleColorBtnClick('white')}>
-            </button>
-            <button className='color-btn red' style={{ backgroundColor: 'red' }}
-              onClick={ () => handleColorBtnClick('red')}>
-            </button>
-            <button className='color-btn green' style={{ backgroundColor: 'green' }}
-              onClick={ () => handleColorBtnClick('green')}>
-             </button>
-            <button className='color-btn blue' style={{ backgroundColor: 'blue' }}
-              onClick={ () => handleColorBtnClick('blue')}>
-            </button>
-            <button className='color-btn yellow' style={{ backgroundColor: 'yellow' }}
-              onClick={ () => handleColorBtnClick('yellow')}>
-            </button> 
-            <button className='color-btn orange' style={{ backgroundColor: 'orange' }}
-              onClick={ () => handleColorBtnClick('orange')}>
-            </button>
-            <button className='color-btn pink' style={{ backgroundColor: 'pink' }}
-              onClick={ () => handleColorBtnClick('pink')}>
-            </button>
+
+          {['white', 'red', 'green', 'blue', 'yellow', 'orange', 'pink'].map((color) => (
+              <button
+                key={color}
+                className={`color-btn ${color}`}
+                style={{ backgroundColor: color }}
+                onClick={() => handleColorBtnClick(color)}>
+              </button>
+          ))}
+          
           </div>
         </div>
 
