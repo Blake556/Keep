@@ -2,6 +2,9 @@
     border: 1px solid rgb(162, 162, 162);
     border-radius: 10px;
     width: 225px;
+   
+    max-height: 450px;
+    overflow-y: hidden;
     padding: 15px;
     margin: 10px;
 }
@@ -9,8 +12,14 @@
 
 .note-title {
     color: white;
+    height: 30px;
 }
 
 .note-body {
     color: white;
+}
+
+.star {
+    color: gray;
+  
 }

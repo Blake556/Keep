@@ -20,7 +20,7 @@ function CreateNote(props) {
     title: '',
     body: '',
     date: getCurrentDate(),
-    color: 'white',
+    color: '',
     star: false
   });
 
@@ -42,9 +42,17 @@ function CreateNote(props) {
         [name]: value
       }
     });
-    // console.log(saveNote)
+    
 
     adjustTextareaHeight(event.target);
+
+     // All this section is doing is passing the note with an index to the parent component so it has an identifier in the array that is stored in app 0, 1, 2, etc.
+    props.handleAddedNotes({
+      ...saveNote,
+      index: props.index, // Assign an index to the note
+    });
+
+
   };
 
 
@@ -116,14 +124,15 @@ function CreateNote(props) {
         <div className='col-8'>
           <div className='d-flex justify-content-end color-container'>
 
-          {['white', 'red', 'green', 'blue', 'yellow', 'orange', 'pink'].map((color) => (
+          {['gray', 'red', 'green', 'blue', '  rgb(224, 224, 0)', 'orange', 'pink'].map((color) => (
               <button
                 type="button"
                 key={color}
-                className={`color-btn ${color}`}
+                className={` color-btn ${color}`}
                 style={{ backgroundColor: color }}
                 onClick={() => handleColorBtnClick(color)}>
               </button>
+              
           ))}
 
           </div>
@@ -135,3 +144,132 @@ function CreateNote(props) {
 }
 
 export default CreateNote;
+
+
+
+
+
+
+
+
+
+
+//// CreateNote.js
+// import React, { useState, useEffect } from 'react';
+// import '../styles/CreateNote.css';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faStar, faPlus } from '@fortawesome/free-solid-svg-icons';
+
+// function CreateNote(props) {
+//   const getCurrentDate = () => {
+//     const currentDay = new Date();
+//     const options = { month: 'short', day: 'numeric' };
+//     return currentDay.toLocaleString('en-US', options);
+//   };
+
+//   const [saveNote, setSaveNote] = useState({
+//     title: '',
+//     body: '',
+//     date: getCurrentDate(),
+//     color: 'gray',
+//     star: false,
+//   });
+
+//   const [activeColor, setActiveColor] = useState('gray');
+
+//   useEffect(() => {
+//     // console.log(saveNote);
+//   }, [saveNote]);
+
+//   const handleSaveNote = (event) => {
+//     event.preventDefault();
+//     const { name, value } = event.target;
+
+//     setSaveNote((previousValue) => ({
+//       ...previousValue,
+//       [name]: value,
+//     }));
+
+//     adjustTextareaHeight(event.target);
+//   };
+
+//   const adjustTextareaHeight = (textarea) => {
+//     textarea.style.height = 'auto';
+//     textarea.style.height = `${textarea.scrollHeight}px`;
+//   };
+
+//   const handleColorBtnClick = (color) => {
+//     setSaveNote((previousValue) => ({
+//       ...previousValue,
+//       color: color,
+//     }));
+//   };
+
+//   const saveToListOfNotes = (event) => {
+//     props.handleAddedNotes(saveNote);
+//     event.preventDefault();
+//   };
+
+//   return (
+//     <div className="CreateNote row">
+//       <form onSubmit={saveToListOfNotes}>
+//         <div className="row note-create-title">
+//           <input
+//             type="text"
+//             placeholder="Title"
+//             name="title"
+//             value={saveNote.title}
+//             onChange={handleSaveNote}
+//           />
+//         </div>
+//         <div className="row note-create-body">
+//           <textarea
+//             type="text"
+//             name="body"
+//             value={saveNote.body}
+//             row={1}
+//             placeholder="Take a note..."
+//             onChange={handleSaveNote}
+//           />
+//         </div>
+//         <div className="row d-flex align-items-center options-panel">
+//           <div className="col-2 d-flex justify-content-center btn-box">
+//             <button
+//               type="button"
+//               className="add-btn"
+//               onClick={saveToListOfNotes}
+//             >
+//               <FontAwesomeIcon icon={faPlus} />
+//             </button>
+//           </div>
+//           <div className="col-2 d-flex justify-content-center">
+//             <button className="favorite-btn">
+//               <FontAwesomeIcon icon={faStar} className="star" />
+//             </button>
+//           </div>
+//           <div className="col-8">
+//             <div className="d-flex justify-content-end color-container">
+//               {['gray', 'red', 'green', 'blue', 'yellow', 'orange', 'pink'].map(
+//                 (color) => (
+//                   <button
+//   type="button"
+//   key={color}
+//   className={`color-btn ${activeColor === color ? 'active' : ''}`}
+//   style={{ backgroundColor: color }}
+//   onClick={() => {
+//     handleColorBtnClick(color);
+//     setActiveColor(color);
+//   }}
+// >
+// </button>
+//                 )
+//               )}
+//             </div>
+//           </div>
+//         </div>
+//       </form>
+//     </div>
+//   );
+// }
+
+// export default CreateNote;

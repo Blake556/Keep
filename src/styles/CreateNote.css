@@ -75,7 +75,11 @@
     background-color: white;
     opacity: 60%;
   }
-
+  
+  .color-btn.active {
+    outline: 2px solid lightblue;
+  }
+  
   
 
 

@@ -12,7 +12,12 @@ function App() {
     notes.push(note)
     setNotes([...notes])
   } 
-  console.log(notes)
+  
+  function handleStarClick(index) {
+    const updateNotes = [...notes]
+    updateNotes[index].star = !updateNotes[index].star
+    setNotes(updateNotes)
+  }
 
   return (
     <div className="App">
@@ -21,7 +26,11 @@ function App() {
       </div>
       <div className="row">
           <SideBar />
-          <Main handleAddedNotes={handleAddedNotes} notes={notes}/>
+          <Main 
+            handleStarClick={handleStarClick}
+            handleAddedNotes={handleAddedNotes} 
+            notes={notes}
+          />
       </div>
     </div>
   );
