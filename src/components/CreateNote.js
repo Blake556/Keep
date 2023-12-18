@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import '../styles/CreateNote.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faPlus } from '@fortawesome/free-solid-svg-icons';
+// Added  uuid llibrary which will give id a unique id value
+import { v4 as uuid } from 'uuid';
+
 
 
 
@@ -17,6 +20,7 @@ function CreateNote(props) {
 
   // Holds all the necessary data when a note is taken and stores it in saveNote state
   const [saveNote, setSaveNote ] =  useState({
+    id: uuid(),
     title: '',
     body: '',
     date: getCurrentDate(),
