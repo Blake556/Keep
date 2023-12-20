@@ -2,12 +2,14 @@ import React from 'react';
 import '../styles/SideBar.css';
 import  FavoriteNotes from './FavoriteNotes'
 
-function SideBar() {
+function SideBar(props) {
   return (
     <div className="SideBar col-3">
-     <FavoriteNotes />
-     <FavoriteNotes />
-     <FavoriteNotes />
+     <FavoriteNotes 
+        notes={props.notes} 
+        handleStarClick={props.handleStarClick}
+        />
+    
     </div>
   );
 }

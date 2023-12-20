@@ -50,13 +50,6 @@ function CreateNote(props) {
 
     adjustTextareaHeight(event.target);
 
-     // All this section is doing is passing the note with an index to the parent component so it has an identifier in the array that is stored in app 0, 1, 2, etc.
-    props.handleAddedNotes({
-      ...saveNote,
-      index: props.index, // Assign an index to the note
-    });
-
-
   };
 
 
@@ -82,6 +75,16 @@ function CreateNote(props) {
   const saveToListOfNotes = (event) => {
     props.handleAddedNotes(saveNote)
     event.preventDefault();
+
+    // All this does is reset the inputs to blank so another note can be typed without haveing to delete previous input text
+    setSaveNote({
+      id: uuid(),
+      title: '',
+      body: '',
+      date: getCurrentDate(),
+      color: '',
+      star: false,
+    });
   }
 
 
@@ -99,7 +102,7 @@ function CreateNote(props) {
         </div>
         <div className="row note-create-body">
           <textarea 
-            type="text" 
+            type="submit" 
             name="body"
             value={saveNote.body} 
             row={1} 
@@ -109,19 +112,24 @@ function CreateNote(props) {
         <div className="row d-flex align-items-center options-panel">
 
           <div className="col-2 d-flex justify-content-center btn-box">
-          <button 
-            type="button"
-            className='add-btn' 
-            onClick={saveToListOfNotes}>
-            <FontAwesomeIcon icon={faPlus} />
+            <button type="button" className='add-btn'  onClick={saveToListOfNotes}>
+              <FontAwesomeIcon 
+                icon={faPlus}
+               
+              />
             </button>
           </div>
 
          
           <div className='col-2 d-flex justify-content-center'>
-          <button className='favorite-btn'>
-            <FontAwesomeIcon icon={faStar} className='star'/>
-          </button>
+            <button className='favorite-btn'>
+              {/* <FontAwesomeIcon 
+                icon={faStar} 
+                className='star'
+                type="text"
+                onClick={() => props.handleStarClick(props.index)}
+              /> */}
+            </button>
           </div>
 
         {/* Refactored  down below, instead of hard coding mutiply button will map over and create all  button with and there colors */}

@@ -9,11 +9,12 @@ function App() {
   const [notes, setNotes] = useState([])
 
   function handleAddedNotes(note) {
+    // This works but if i favorite a note they all will get favorited.
     // notes.push(note)
     // setNotes([...notes])
 
     // I need to review this but basically the code had to be changed from up above to this becuase of the way i added an id and property to createNote and used uuidv4 as the value which just basically means id will have its own unique value from uuidv4 library
-    
+
     const newNote = { ...note, id: uuidv4() };
     setNotes(prevNotes => [...prevNotes, newNote]);
   } 
@@ -44,7 +45,14 @@ function handleStarClick(id) {
     });
   });
 }
+// console.log(notes)
 
+function handleDeleteNote(id) {
+  setNotes(prevNotes => {
+    // Use filter to create a new array without the note with the specified id
+    return prevNotes.filter(note => note.id !== id);
+  });
+}
 
 
   return (
@@ -53,10 +61,14 @@ function handleStarClick(id) {
         <Header />
       </div>
       <div className="row">
-          <SideBar />
+          <SideBar 
+            notes={notes} 
+            handleStarClick={handleStarClick}
+            />
           <Main 
             handleStarClick={handleStarClick}
-            handleAddedNotes={handleAddedNotes} 
+            handleAddedNotes={handleAddedNotes}
+            handleDeleteNote={handleDeleteNote} 
             notes={notes}
           />
       </div>

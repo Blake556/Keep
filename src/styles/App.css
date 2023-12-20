@@ -7,7 +7,7 @@
 body {
   background-color:rgb(46, 46, 46);
   width: 100vw;
-  overflow-x: hidden;
+  overflow-x: scroll;
 
 }
 

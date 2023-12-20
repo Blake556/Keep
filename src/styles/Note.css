@@ -1,9 +1,11 @@
 .Note {
     border: 1px solid rgb(162, 162, 162);
     border-radius: 10px;
-    width: 225px;
+    width: 235px;
    
     max-height: 450px;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
     overflow-y: hidden;
     padding: 15px;
     margin: 10px;
@@ -12,7 +14,7 @@
 
 .note-title {
     color: white;
-    height: 30px;
+    height: 40px;
 }
 
 .note-body {
@@ -22,4 +24,19 @@
 .star {
     color: gray;
   
+}
+
+.delete {
+    height: 40px;
+}
+
+.delete-button {
+    border: none;
+    outline: none;
+    background-color:rgb(46, 46, 46);
+}
+
+.delete-icon {
+    color: red;
+  font-size: 1.2rem;
 }

@@ -7,11 +7,15 @@ import Note from './Note'
 function Main(props) {
   return (
     <div className="Main col-9">
-     <CreateNote handleAddedNotes={props.handleAddedNotes} />
+     <CreateNote 
+        handleAddedNotes={props.handleAddedNotes} 
+        // handleStarClick={props.handleStarClick}
+      />
      <Notes 
         notes={props.notes} 
         handleStarClick={props.handleStarClick}
-        />
+        handleDeleteNote={props.handleDeleteNote} 
+      />
     </div>
   );
 }

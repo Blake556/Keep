@@ -5,7 +5,7 @@ import Note from './Note'
 function Notes(props) {
 
   let noteData = props.notes
-  console.log(noteData)
+  // console.log(noteData)
   return (
     <div className="Notes row">
     {props.notes.map((note, index) => {
@@ -20,6 +20,7 @@ function Notes(props) {
           star={note.star}
           // handleStarClick={props.handleStarClick}
           handleStarClick={() => props.handleStarClick(note.id)} // with the current version of adding an id 
+          handleDeleteNote={() => props.handleDeleteNote(note.id)} 
         />
       )
     })}
