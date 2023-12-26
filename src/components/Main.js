@@ -15,6 +15,12 @@ function Main(props) {
         notes={props.notes} 
         handleStarClick={props.handleStarClick}
         handleDeleteNote={props.handleDeleteNote} 
+         //Passing pop-up state and handler below
+        viewNote={props.viewNote}
+        setViewNote={props.setViewNote}
+        //Passing the data to populate pop-up note
+        viewNoteData={props.viewNoteData}
+        handleNoteClick={props.handleNoteClick}
       />
     </div>
   );

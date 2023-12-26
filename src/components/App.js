@@ -6,7 +6,22 @@ import Main from './Main'
 import { v4 as uuidv4 } from 'uuid';
 
 function App() {
+  // This holds all the note data as an object and storesevery note object in notes array state
   const [notes, setNotes] = useState([])
+  // This is responsible for the note poping up and closing based on click event
+  const [viewNote, setViewNote] = useState(false)
+  //When a notes is clicked on and pops-up this holds the data that will render inside that note
+  const [viewNoteData, setViewNoteData] = useState(null);
+
+
+ // I set both states in this function viewNote and viewNoteData. setViewNoteData(clickedNote) ( clickNote is the parameter that will get called as an argument in < Note /> and will be used to pass back the data ) viewNoteData is responsible for getting the specific note that was clicked on from the array of notes, so it can access it's title, body data for when viewNote state equals true and the note pops up viewNoteData state will populate the pop-up with data
+ function handleNoteClick(clickedNote) {
+    setViewNoteData(clickedNote)
+    setViewNote(true)
+    // console.log('Note clicked!');
+ }
+
+ console.log(viewNoteData)
 
   function handleAddedNotes(note) {
     // This works but if i favorite a note they all will get favorited.
@@ -45,7 +60,7 @@ function handleStarClick(id) {
     });
   });
 }
-// console.log(notes)
+
 
 function handleDeleteNote(id) {
   setNotes(prevNotes => {
@@ -54,6 +69,9 @@ function handleDeleteNote(id) {
   });
 }
 
+// function handleViewnote() {
+//   setViewNote(true)
+// }
 
   return (
     <div className="App">
@@ -64,12 +82,21 @@ function handleDeleteNote(id) {
           <SideBar 
             notes={notes} 
             handleStarClick={handleStarClick}
-            />
+           //Passing pop-up state and handler below
+            viewNoteData={viewNoteData}
+            setViewNote={setViewNote}
+            handleNoteClick={handleNoteClick}
+          />
           <Main 
+            notes={notes}
             handleStarClick={handleStarClick}
             handleAddedNotes={handleAddedNotes}
             handleDeleteNote={handleDeleteNote} 
-            notes={notes}
+           //Passing pop-up state and handler below
+            viewNote={viewNote}
+            viewNoteData={viewNoteData}
+            setViewNote={setViewNote}
+            handleNoteClick={handleNoteClick}
           />
       </div>
     </div>
@@ -79,4 +106,3 @@ function handleDeleteNote(id) {
 export default App;
 
 
-//Work, Code Pool Sleep BJJ Gym

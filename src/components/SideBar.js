@@ -8,7 +8,12 @@ function SideBar(props) {
      <FavoriteNotes 
         notes={props.notes} 
         handleStarClick={props.handleStarClick}
-        />
+        //Passing pop-up state and handler below
+         setViewNote={props.setViewNote}
+        //Passing data for pop-up state and handler below
+        viewNoteData={props.viewNoteData}
+        handleNoteClick={props.handleNoteClick}
+     />
     
     </div>
   );
