@@ -27,13 +27,15 @@
 }
 
 .delete {
+    
     height: 40px;
 }
 
 .delete-button {
+    background: rgba(0, 0, 0, 0);
     border: none;
     outline: none;
-    background-color:rgb(46, 46, 46);
+   
 }
 
 .delete-icon {

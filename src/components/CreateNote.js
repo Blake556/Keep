@@ -8,7 +8,15 @@ import { v4 as uuid } from 'uuid';
 
 
 
-function CreateNote(props) {
+function CreateNote(props, event) {
+  //clickedColor is only responsible for managing the CSS border when one of the color buttons is clicked. See the color buttons styling for rest of explanation. 
+  const [clickedColor, setClickedColor] = useState(null)
+
+
+  const handleColorChose = (color) => {
+    //passed the color argument from down below to the color parameter inside this function, color is the specific color of the button and will set the state to that color instead of null. when clickedColor is passed in the inline styles itll take that specific color that was clicked on and apply the border to that button  
+    setClickedColor(color)
+  };
 
   // This function only gets the current date to return it to the saveNote state object
   const getCurrentDate = () => {
@@ -75,7 +83,8 @@ function CreateNote(props) {
   const saveToListOfNotes = (event) => {
     props.handleAddedNotes(saveNote)
     event.preventDefault();
-
+    //below  setClickedColor is passed only to reset to no (color button) border when the note is saved 
+    setClickedColor(null)
     // All this does is reset the inputs to blank so another note can be typed without haveing to delete previous input text
     setSaveNote({
       id: uuid(),
@@ -136,13 +145,18 @@ function CreateNote(props) {
         <div className='col-8'>
           <div className='d-flex justify-content-end color-container'>
 
-          {['gray', 'red', 'green', 'blue', '  rgb(224, 224, 0)', 'orange', 'pink'].map((color) => (
+          {['rgb(89, 89, 89)', 'rgb(131, 0, 0)', 'rgb(34, 114, 49)', 'rgb(0, 72, 131)', '    rgb(186, 179, 38)', ' rgb(178, 130, 40)', 'rgb(158, 99, 109)'].map((color) => (
               <button
                 type="button"
                 key={color}
                 className={` color-btn ${color}`}
-                style={{ backgroundColor: color }}
-                onClick={() => handleColorBtnClick(color)}>
+                
+                style={ { backgroundColor: color, border: clickedColor === color ? 'solid 2px rgb(42, 195, 255)' :  'none' } }
+                // handleColorBtnClick(color) will handle adding the current color to the object while handleColorChose(color) only is responsible for giving a single button a border when clicked this is posible becuase color argument comes from map which gets the specific color then is passed to the handleColorChose  function as an argument.;
+                onClick={() => {
+                  handleColorBtnClick(color)  
+                  handleColorChose(color);
+                }}>
               </button>
               
           ))}
