@@ -11,6 +11,7 @@ function Main(props) {
         handleAddedNotes={props.handleAddedNotes} 
         // handleStarClick={props.handleStarClick}
       />
+     { props.notes.length > 0 ? (
      <Notes 
         notes={props.notes} 
         handleStarClick={props.handleStarClick}
@@ -22,7 +23,13 @@ function Main(props) {
         viewNoteData={props.viewNoteData}
         handleNoteClick={props.handleNoteClick}
       />
+       ) : (
+        <div className="no-notes-msg">
+        <h5>No Notes added</h5>
+        </div>
+       )}
     </div>
+   
   );
 }
 

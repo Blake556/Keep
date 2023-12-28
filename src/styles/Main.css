@@ -2,3 +2,9 @@
    
     min-height: 100vh;
 }
+
+.no-notes-msg {
+    text-align: center;
+    color: white;
+    margin-top: 150px;
+}

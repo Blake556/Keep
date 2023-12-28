@@ -21,10 +21,7 @@ function FavoriteNotes(props) {
               className="favorite-notes-box row d-flex align-items-center"
               style={{ backgroundColor: note.color }}
               key={note.id}
-              // Becuase handleNoteClick handles both pop-up and extracts the data to fill in the pop-up with data. this is all thats needs to be passed for the pop-up to work. All the state is pulled from app unlike , Note /> where the state is loaclly defined 
-
-              //From what i gathered so far if <ViewNot /> is taken away from <Note /> then <ViewNot /> will also not work when <FavoriteNote /> is clicked on so when this function is called below its using  <ViewNot /> inside <Note /> to render starting from <App />
-              onClick={() => props.handleNoteClick(note)}
+              
             >
               <div className="favorite-notes-child favorite-notes-star col-2 d-flex align-items-center">
                 <FontAwesomeIcon
@@ -33,8 +30,14 @@ function FavoriteNotes(props) {
                   onClick={() => props.handleStarClick(note.id)}
                 />
               </div>
-              <div className="favorite-notes-child col-10 d-flex justify-content-center align-items-center">
+              <div className="favorite-notes-child col-10 d-flex justify-content-center align-items-center"
+              // Becuase handleNoteClick handles both pop-up and extracts the data to fill in the pop-up with data. this is all thats needs to be passed for the pop-up to work. All the state is pulled from app unlike , Note /> where the state is loaclly defined 
+
+              //From what i gathered so far if <ViewNot /> is taken away from <Note /> then <ViewNot /> will also not work when <FavoriteNote /> is clicked on so when this function is called below its using  <ViewNot /> inside <Note /> to render starting from <App />
+              onClick={() => props.handleNoteClick(note)}
+              >
                 <h5 className="">{note.title}</h5>
+
               </div>
              
             </div>

@@ -6,7 +6,7 @@ import '../styles/Header.css';
 function ViewNote(props) {
  
 
- console.log(props.viewNoteData)
+ //console.log(props.viewNoteData)
   return props.viewNote ? (
     
     

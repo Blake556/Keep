@@ -2,43 +2,44 @@
     position: fixed;
     top: 50%;
     left: 65%;
-    transform: translate(-50%, -50%);
+    transform: translate(-57%, -50%);
     border-radius: 10px;
-    background-color:rgb(46, 46, 46);
+    background-color: rgb(46, 46, 46);
     border: 1px solid rgb(162, 162, 162);
-    width: 500px;
-    height: 400px;
+    width: 600px;
+    min-height: 400px;
+ 
+    overflow-y: scroll;
     z-index: 1000;
     color: white;
 }
 
+
+
 .view-note-head {
-    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1); 
-    padding: 5px 10px;
-    
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+    padding: 5px 20px;
+    height: 50px;
+    position: relative; /* Add relative positioning */
 }
 
 .view-note-ppt {
-    margin-top: 7px;
+    margin: 7px;
 }
 
 .pop-up-close-btn {
-    background-color:rgb(46, 46, 46);
+    background: rgba(0, 0, 0, 0);
     color: white;
-   margin: auto 87%;
-    /* position: relative;
-   
-    left: 93%; */
+    position: absolute;
+    right: 15px; /* Adjust this value to set the margin on the right */
+    top: 50%; /* Center vertically within view-note-head */
+    transform: translateY(-50%); /* Adjust for vertical centering */
     border: 0;
     outline: 0;
 }
 
 .view-note-body {
-
-    padding: 15px;
+    padding: 15px 25px 15px 25px;
+  
     font-weight: 600;
-}
-
-.view-note-show {
-    /* z-index: 2; */
 }

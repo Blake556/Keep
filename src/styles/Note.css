@@ -1,44 +1,47 @@
 .Note {
+    position: relative; /* Add this to make position: absolute work */
     border: 1px solid rgb(162, 162, 162);
     border-radius: 10px;
     width: 235px;
-   
     max-height: 450px;
     overflow-x: hidden;
     overflow-wrap: break-word;
     overflow-y: hidden;
     padding: 15px;
     margin: 10px;
+    display: flex;
+    flex-direction: column; /* Set the flex direction to column */
+    position: relative; /* Add this to make position: absolute work */
 }
-
 
 .note-title {
     color: white;
-    height: 40px;
+    min-height: 40px;
+    overflow-x: hidden;
 }
 
 .note-body {
     color: white;
+    max-height: 340px;
+    overflow-y: hidden;
 }
 
 .star {
     color: gray;
-  
 }
 
 .delete {
-    
-    height: 40px;
+    margin-top: auto; /* Push the delete button to the bottom */
+    padding-top: 15px;
 }
 
 .delete-button {
     background: rgba(0, 0, 0, 0);
     border: none;
     outline: none;
-   
 }
 
 .delete-icon {
     color: red;
-  font-size: 1.2rem;
+    font-size: 1.2rem;
 }

@@ -21,7 +21,7 @@ function App() {
     // console.log('Note clicked!');
  }
 
- console.log(viewNoteData)
+ //console.log(viewNoteData)
 
   function handleAddedNotes(note) {
     // This works but if i favorite a note they all will get favorited.
