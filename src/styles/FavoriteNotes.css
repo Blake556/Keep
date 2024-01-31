@@ -1,9 +1,6 @@
-/* .Favorite-Notes {
-text-align: center;
-} */
+
 .favorite-notes-box {
     border: 1px solid rgb(162, 162, 162);
-    /* box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);  */
     border-radius: 10px;
     width: fit-content; 
     width: 275px; 
@@ -27,7 +24,7 @@ text-align: center;
   .favorite-notes-child h5 {
     font-size: 18px;
     font-weight: 700;
-    margin: 0; /* Remove default margin */
+    margin: 0; 
     margin-right: 20px;
     
   }

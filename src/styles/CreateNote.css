@@ -1,8 +1,7 @@
-/* CreateNote.css */
+
 .CreateNote {
     border: 1px solid rgb(162, 162, 162);
     border-radius: 10px;
-    /* background-color: white; */
     min-height: 150px;
     width: 60%;
     margin: 30px auto;
@@ -19,7 +18,6 @@
     font-weight: 700;
   }
   .note-create-title {
-   
     min-height: 50px;
   }
   
@@ -48,7 +46,6 @@
 .add-btn  {
     color: gray;
     background-color:rgb(46, 46, 46);
-    /* width: 60px; */
     padding: 2px 30px;
     border: 1px solid gray;
     border-radius: 5px;
@@ -58,7 +55,6 @@
 .favorite-btn  {
     color: gray;
     background-color:rgb(37, 37, 37);
-    /* width: 60px; */
     padding: 2px 10px;
     border: 1px solid rgb(37, 37, 37);
     border-radius: 5px;

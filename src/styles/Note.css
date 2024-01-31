@@ -1,5 +1,5 @@
 .Note {
-    position: relative; /* Add this to make position: absolute work */
+    position: relative;
     border: 1px solid rgb(162, 162, 162);
     border-radius: 10px;
     width: 235px;
@@ -10,8 +10,8 @@
     padding: 15px;
     margin: 10px;
     display: flex;
-    flex-direction: column; /* Set the flex direction to column */
-    position: relative; /* Add this to make position: absolute work */
+    flex-direction: column;
+    position: relative;
 }
 
 .note-title {
@@ -31,7 +31,7 @@
 }
 
 .delete {
-    margin-top: auto; /* Push the delete button to the bottom */
+    margin-top: auto;
     padding-top: 15px;
 }
 
